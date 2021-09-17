@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Test Automation 2021" >
+    <parameter name="firstName" value="Lorena"/>
+    <test name="TestCases Examples">
+        <groups>
+            <run>
+                <include name="dataProvider"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="parameters.ParametersExample"/>
+            <class name="assertionsExamples.AssertionsExamples"/>
+            <class name="dataProvidersExample.DataProviderIterator"/>
+            <class name="dataProvidersExample.DataProviderIteratorExternalClass"/>
+        </classes>
+    </test>
+</suite>
