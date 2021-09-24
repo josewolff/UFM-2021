@@ -14,7 +14,13 @@ public class Student {
 
     public boolean verifyCarne(Student student){
         int carne = student.carne;
-        System.out.println(String.valueOf(carne).length());
-        return String.valueOf(carne).length() == 5;
+        if(student != null){
+            System.out.println(String.valueOf(carne).length());
+            return String.valueOf(carne).length() == 5;
+        }else{
+            System.out.println("test");
+            return false;
+        }
+
     }
 }
