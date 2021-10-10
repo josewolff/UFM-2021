@@ -5,6 +5,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import requestMaker.RequestMaker;
 
 import static io.restassured.RestAssured.given;
 
@@ -17,8 +18,6 @@ public class PostMethod {
         url  = "http://localhost:5000/users/add";
     }
 
-
-
     @Test
     public void postUser(){
         for (int i = 0; i < 200; i++){
@@ -27,23 +26,10 @@ public class PostMethod {
                     .put("firstname", "firstame12"+i)
                     .put("lastname", "lastname12"+i)
                     .put("email","email12" + i +"@gmail.com");
-            Response response = given()
-                    .header("Content-Type","application/json")
-                    .when()
-                    .body(body.toString())
-                    .post(url)
-                    .then()
-                    .assertThat().statusCode(200)
-                    .extract().response();
+            Response response = RequestMaker.makePostRequest(url,body.toString());
             String reponseString = response.asString();
             JSONObject jsonArray =  new JSONObject(reponseString);
-
             System.out.println(jsonArray.toString(10));
         }
-
-
     }
-
-
-
 }
