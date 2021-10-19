@@ -2,9 +2,7 @@ package systemTesting;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -22,7 +20,7 @@ public class InitDriver {
 
     @Parameters("browser")
     @BeforeClass(alwaysRun = true)
-    public void openDriver(@Optional("chrome") String browser){
+    public void openDriver(@Optional("safari") String browser){
         initDriver(browser);
     }
 
@@ -47,11 +45,7 @@ public class InitDriver {
             } else {
                 if (browser.equals("chrome")) {
                     System.setProperty("webdriver.chrome.driver", chromeDriver);
-                    DesiredCapabilities caps = DesiredCapabilities.chrome();
-                    ChromeOptions options = new ChromeOptions();
-                    options.addArguments(new String[]{"--start-maximized"});
-                    options.merge(caps);
-                    driver = new ChromeDriver(options);
+                    driver = new ChromeDriver();
                 } else if (browser.equals("safari")) {
                     driver = new SafariDriver();
                     driver.manage().window().maximize();
