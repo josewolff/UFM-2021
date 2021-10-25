@@ -21,4 +21,7 @@ public class RegisterPage {
 
     @FindBy(xpath = "//a[contains(text(),'Register Account')]")
     protected WebElement registerBtn;
+
+    @FindBy(xpath = "//a[contains(@class,'btn-google')]")
+    protected WebElement registerWithGoogle;
 }

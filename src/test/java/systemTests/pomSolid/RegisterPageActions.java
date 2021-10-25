@@ -25,29 +25,33 @@ public class RegisterPageActions extends  RegisterPage {
         clickRegisterAccount();
     }
 
-    private void fillFirstName(String firstNameTest){
+    public void fillFirstName(String firstNameTest){
         wait.until(ExpectedConditions.visibilityOf(firstName)).sendKeys(firstNameTest);
     }
 
 
-    private void fillLastName(String lastNameText){
+    public void fillLastName(String lastNameText){
         wait.until(ExpectedConditions.visibilityOf(lastName)).sendKeys(lastNameText);
     }
 
 
-    private void fillEmail(String emailT){
+    public void fillEmail(String emailT){
         wait.until(ExpectedConditions.visibilityOf(email)).sendKeys(emailT);
     }
 
-    private void fillPassword(String passwordT){
+    public void fillPassword(String passwordT){
         wait.until(ExpectedConditions.visibilityOf(password)).sendKeys(passwordT);
     }
 
-    private void fillRepeatPassword(String rPasswordT){
+    public void fillRepeatPassword(String rPasswordT){
         wait.until(ExpectedConditions.visibilityOf(repeatPassword)).sendKeys(rPasswordT);
     }
 
-    private void clickRegisterAccount(){
+    public void clickRegisterAccount(){
         wait.until(ExpectedConditions.visibilityOf(registerBtn)).click();
+    }
+
+    public void clickRegisterWithGoogleButton(){
+        registerWithGoogle.click();
     }
 }
