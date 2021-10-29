@@ -3,12 +3,14 @@ package cucumberTests.hooksAndShareData;
 import cucumber.CucumberDriver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
 public class Hooks {
     private ShareData shareData;
+
 
     public Hooks(ShareData shareData){
         this.shareData = shareData;

@@ -20,22 +20,6 @@ public class CucumberDriver {
     private String geckoDriver = "";
     private String chromeDriver = "";
 
-    @Parameters("browser")
-    @BeforeClass(alwaysRun = true)
-    public void openDriver(@Optional("safari") String browser){
-        initDriver(browser);
-    }
-
-    @AfterClass(alwaysRun = true)
-    public void tearDown() {
-        try {
-            driver.quit();
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-
-    }
-
     public WebDriver initDriver(String browser) {
         try {
             selectDriverBasedOnOs();
