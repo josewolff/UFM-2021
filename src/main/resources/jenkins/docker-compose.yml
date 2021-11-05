@@ -1,0 +1,13 @@
+# Use root/root as user/password credentials
+version: '3'
+
+services:
+  jenkins:
+    privileged: true
+    image: wolffjose/jenkinsinstanceexamples:J2.277.3
+    restart: always
+    ports:
+      - 8080:8080
+      - 50000:50000
+    volumes:
+      - /Users/JoseWolff/Desktop/test:/var/jenkins_home
