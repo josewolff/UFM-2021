@@ -4,7 +4,7 @@
     <test name="TestCases Examples">
         <groups>
             <run>
-                <include name="dataProvider"/>
+                <include name="assertions"/>
             </run>
         </groups>
         <classes>
